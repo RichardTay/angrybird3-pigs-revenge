@@ -1,4 +1,4 @@
-# 🐷 Angry Birds: Revenge of the Pigs
+# 🐷 Angry Bird 3: Revenge of the Pigs
 
 > **The tables have turned. The birds are attacking, and this time... the Pigs are fighting back!**
 
