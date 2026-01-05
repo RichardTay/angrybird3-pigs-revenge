@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angry Bird 3 - Revenge of the Pigs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud">
+    <div class="stat">
+      <span class="label">Score</span>
+      <span id="score">0</span>
+    </div>
+    <div class="stat">
+      <span class="label">Best</span>
+      <span id="highScoreDisplay">0</span>
+    </div>
+    <div class="stat">
+      <span class="label">Time</span>
+      <span id="timer">02:00</span>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="overlay" class="overlay show">
+    <div class="panel">
+      <h1>Angry Bird 3 - Revenge of the Pigs</h1>
+      <p id="statusText">Defend against the invasion!</p>
+      
+      <div id="rewardSection" class="hidden">
+        <p class="reward-title">New High Score! Pick your Ammo:</p>
+        <div class="color-picker">
+          <button class="color-btn selected" data-color="#FFFBEB" style="background-color: #FFFBEB; border: 1px solid #ccc;"></button>
+          <button class="color-btn" data-color="#FACC15" style="background-color: #FACC15;"></button>
+          <button class="color-btn" data-color="#EF4444" style="background-color: #EF4444;"></button>
+          <button class="color-btn" data-color="#1F2937" style="background-color: #1F2937;"></button>
+          <button class="color-btn" data-color="#8B5CF6" style="background-color: #8B5CF6;"></button>
+        </div>
+      </div>
+
+      <button id="startButton">Start Game</button>
+      <p class="hint">Move with A/D or Arrow keys, shoot with Space.</p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+:root {
+  --bg-1: #0f172a;
+  --bg-2: #111827;
+  --accent: #7c3aed;
+  --accent-2: #22d3ee;
+  --panel: rgba(15, 23, 42, 0.8);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.12), transparent 35%),
+              radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.14), transparent 35%),
+              linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+  font-family: "Bahnschrift", "Trebuchet MS", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+canvas {
+  width: min(1200px, 100vw);
+  height: min(720px, 100vh);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: transparent;
+  display: block;
+}
+
+.hud {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.stat {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#score, #timer {
+  font-size: 16px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 28px 32px;
+  border-radius: 18px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 360px;
+}
+
+.panel h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.panel p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+button {
+  margin-top: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #0b1222;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  canvas {
+    width: 100vw;
+    height: 75vh;
+  }
+
+  .hud {
+    top: 10px;
+  }
+
+  .panel {
+    width: 88vw;
+  }
+}
+
+/* ... Keep all your existing CSS ... */
+
+/* NEW STYLES BELOW */
+
+.hidden {
+  display: none !important;
+}
+
+.reward-title {
+  color: #fbbf24 !important; /* Gold text */
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.color-picker {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.color-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.2s, border-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.selected {
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
