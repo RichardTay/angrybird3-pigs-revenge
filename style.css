@@ -255,3 +255,12 @@ button:active {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 94, 91, 0.3);
 }
+
+
+/* ... Keep existing CSS ... */
+
+.visitor-counter {
+  margin-left: auto; /* Pushes this element to the far right */
+  border-left: 1px solid rgba(255,255,255,0.2); /* Separator line */
+  padding-left: 15px;
+}
